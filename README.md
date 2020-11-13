@@ -14,3 +14,10 @@ class BinaryTreeNode<T> {
   }
 }
 ```
+## Traversing a Tree 
+
+The are 4 ways to travers a Binary Tree. 
+
+* Breadth-order traversal or Level-order traversal 
+* Depth-First Traversal - In-Order 
+
