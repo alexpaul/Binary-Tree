@@ -3,7 +3,7 @@
 A Binary Tree is an abstract data struture the is made up of a root node and a left and right node. A node can have zero, one or two child nodes. 
 
 
-## Components of a Binary Tree 
+## Components of a Binary Tree Node
 
 * data 
 * left child node 
