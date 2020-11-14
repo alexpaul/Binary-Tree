@@ -206,7 +206,29 @@ postOrderTraversal(rootNode) // 7 30 11 6 4 8
 
 ## Depth-First Order Traversal - Pre-Order
 
+```swift 
+/*
+        8
+      /   \
+     11    4
+    /  \    \
+   7   30    6
+*/
 
+func preOrderTraversal<T>(_ treeNode: BinaryTreeNode<T>?) {
+  if let root = treeNode {
+    print(root.value)
+  }
+  if let left = treeNode?.left {
+    preOrderTraversal(left)
+  }
+  if let right = treeNode?.right {
+    preOrderTraversal(right)
+  }
+}
+
+preOrderTraversal(rootNode) // 8 11 7 30 4 6
+```
 
 
 ## Resources 
