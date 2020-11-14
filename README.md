@@ -1,6 +1,19 @@
 # Binary-Tree
 
-Binary Tree in Swift. A Binary Tree is an abstract data struture the is made up of a root node and a left and rigt subtree. At most an node has zero, one or tow child nodes. 
+Binary Tree in Swift. A Binary Tree is an abstract data struture the is made up of a root node and a left and rigt subtree. A node can have zero, one or two child nodes. 
+
+
+## Components of a Binary Tree 
+
+* data 
+* left child node 
+* right child node 
+
+## Common Operations 
+
+* Traversal 
+* Insertion
+* Deletion 
 
 
 ## Binary Tree Node
@@ -16,14 +29,98 @@ class BinaryTreeNode<T> {
 }
 ```
 
+## Binary Tree 
+
+```swift 
+/*
+        8
+      /   \
+     11    4
+    /  \    \
+   7   30    6
+*/
+```
+
 ## Traversing a Tree 
 
 The are 4 ways to traverse (iterate through each element of) a Binary Tree. 
 
-* Breadth-order traversal or Level-order traversal 
-* Depth-First Traversal - In-Order 
-* Depth-First Traversal - Pre-Order 
-* Depth-First Traversal - Post-Order 
+* Breadth-First Order traversal or Level-order traversal 
+* Depth-First Order Traversal - In-Order 
+* Depth-First Order Traversal - Pre-Order 
+* Depth-First Order Traversal - Post-Order 
 
 
+## Breadth-First Order traversal or Level-order traversal
+
+#### Queue
+
+```swift 
+struct Queue<T> {
+  private var elements = [T]()
+  
+  public var isEmpty: Bool {
+    return elements.isEmpty
+  }
+  
+  public var peek: T? {
+    return elements.first
+  }
+  
+  mutating func enqueue(_ element: T) {
+    elements.append(element)
+  }
+  
+  mutating func dequeue() -> T? {
+    guard !elements.isEmpty else {
+      return nil
+    }
+    return elements.removeFirst()
+  }
+}
+```
+
+#### Breadth-First Order traversal
+
+```swift 
+func breadthFirstTraversal<T>(_ treeNode: BinaryTreeNode<T>?) {
+  var queue = Queue<BinaryTreeNode<T>>()
+  guard let _ = treeNode else {
+    return
+  }
+  queue.enqueue(treeNode!)
+  print(treeNode!.value)
+  while let node = queue.dequeue() {
+    if let left = node.left {
+      print(left.value)
+      queue.enqueue(left)
+    }
+    if let right = node.right {
+      print(right.value)
+      queue.enqueue(right)
+    }
+  }
+}
+
+let rootNode = BinaryTreeNode(8)
+let elevenNode = BinaryTreeNode(11)
+let fourNode = BinaryTreeNode(4)
+let sevenNode = BinaryTreeNode(7)
+let thirtyNode = BinaryTreeNode(30)
+let sixNode = BinaryTreeNode(6)
+
+rootNode.left = elevenNode
+rootNode.right = fourNode
+elevenNode.left = sevenNode
+elevenNode.right = thirtyNode
+fourNode.right = sixNode
+
+breadthFirstTraversal(rootNode)
+// 8 11 4 7 30 6
+```
+
+
+## Resources 
+
+1. [Wikipedia - Binary Tree](https://en.wikipedia.org/wiki/Binary_tree#:~:text=In%20computer%20science%2C%20a%20binary,child%20and%20the%20right%20child.)
 
