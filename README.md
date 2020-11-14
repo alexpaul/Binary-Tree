@@ -2,6 +2,14 @@
 
 A Binary Tree is an abstract data struture the is made up of a root node and a left and right node. A node can have zero, one or two child nodes. 
 
+## Tree Structure Vocabulary
+
+* root
+* subtree
+* parent node
+* leaf
+* depth
+* height 
 
 ## Components of a Binary Tree Node
 
@@ -241,7 +249,8 @@ preOrderTraversal(rootNode) // 8 11 7 30 4 6
 
 ## Resources 
 
-1. [Wikipedia - Binary Tree](https://en.wikipedia.org/wiki/Binary_tree#:~:text=In%20computer%20science%2C%20a%20binary,child%20and%20the%20right%20child.)
-2. [GeekForGeeks - Binary Tree Data Structure](https://www.geeksforgeeks.org/binary-tree-data-structure/)
-3. [RW - Swift Algorithm Club - Binary Tree](https://github.com/raywenderlich/swift-algorithm-club/tree/master/Binary%20Tree)
+1. [Wikipedia - Tree Data Structure](https://en.wikipedia.org/wiki/Tree_(data_structure))
+2. [Wikipedia - Binary Tree](https://en.wikipedia.org/wiki/Binary_tree#:~:text=In%20computer%20science%2C%20a%20binary,child%20and%20the%20right%20child.)
+3. [GeekForGeeks - Binary Tree Data Structure](https://www.geeksforgeeks.org/binary-tree-data-structure/)
+4. [RW - Swift Algorithm Club - Binary Tree](https://github.com/raywenderlich/swift-algorithm-club/tree/master/Binary%20Tree)
 
