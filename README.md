@@ -175,7 +175,11 @@ rootNode.inOrderTraversal { (node) in
 }
 ```
 
-## Depth-First Order Traversal - In-Order
+## Depth-First Order Traversal - Post-Order
+
+
+## Depth-First Order Traversal - Pre-Order
+
 
 
 
