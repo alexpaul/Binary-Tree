@@ -180,6 +180,14 @@ rootNode.inOrderTraversal { (node) in
 #### Write a function that take a Binary Tree node and prints the values using `post-order traversal`
 
 ```swift 
+/*
+        8
+      /   \
+     11    4
+    /  \    \
+   7   30    6
+*/
+
 func postOrderTraversal<T>(_ treeNode: BinaryTreeNode<T>?) {
   if let left = treeNode?.left {
     postOrderTraversal(left)
