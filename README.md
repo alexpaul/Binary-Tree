@@ -119,8 +119,65 @@ breadthFirstTraversal(rootNode)
 // 8 11 4 7 30 6
 ```
 
+## Depth-First Order Traversal - In-Order
+
+#### Write a function that takes a Binary Tree node and prints all its values 
+
+```swift 
+func inOrderTraversal<T>(_ node: BinaryTreeNode<T>?) {
+  if let left = node?.left {
+    inOrderTraversal(left)
+  }
+  if let value = node?.value {
+    print(value)
+  }
+  if let right = node?.right {
+    inOrderTraversal(right)
+  }
+}
+
+inOrderTraversal(rootNode) // 7 11 30 8 4 6
+```
+
+#### Write a function that takes a Binary Tree node and captures its values via a closure
+
+```swift 
+func inOrderTraversal<T>(_ node: BinaryTreeNode<T>?, visit: (BinaryTreeNode<T>) -> ()) {
+  if let left = node?.left {
+    inOrderTraversal(left, visit: visit)
+  }
+  if let node = node {
+    visit(node)
+  }
+  if let right = node?.right {
+    inOrderTraversal(right, visit: visit)
+  }
+}
+
+inOrderTraversal(rootNode) { (node) in
+  print(node.value) // 7 11 30 8 4 6
+}
+```
+
+#### Extend Binary Tree node and write a funciton that captures all its values via a closure 
+
+```swift 
+extension BinaryTreeNode {
+  func inOrderTraversal(_ visit: (BinaryTreeNode<T>) -> ()) {
+    left?.inOrderTraversal(visit)
+    visit(self)
+    right?.inOrderTraversal(visit)
+  }
+}
+
+rootNode.inOrderTraversal { (node) in
+  print(node.value) // 7 11 30 8 4 6
+}
+```
+
 
 ## Resources 
 
 1. [Wikipedia - Binary Tree](https://en.wikipedia.org/wiki/Binary_tree#:~:text=In%20computer%20science%2C%20a%20binary,child%20and%20the%20right%20child.)
+2. [GeekForGeeks - Binary Tree Data Structure](https://www.geeksforgeeks.org/binary-tree-data-structure/)
 
