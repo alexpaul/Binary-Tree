@@ -177,6 +177,24 @@ rootNode.inOrderTraversal { (node) in
 
 ## Depth-First Order Traversal - Post-Order
 
+#### Write a function that take a Binary Tree node and prints the values using `post-order traversal`
+
+```swift 
+func postOrderTraversal<T>(_ treeNode: BinaryTreeNode<T>?) {
+  if let left = treeNode?.left {
+    postOrderTraversal(left)
+  }
+  if let right = treeNode?.right {
+    postOrderTraversal(right)
+  }
+  if let root = treeNode {
+    print(root.value)
+  }
+}
+
+postOrderTraversal(rootNode) // 7 30 11 6 4 8
+```
+
 
 ## Depth-First Order Traversal - Pre-Order
 
