@@ -83,6 +83,14 @@ struct Queue<T> {
 #### Breadth-First Order traversal
 
 ```swift 
+/*
+        8
+      /   \
+     11    4
+    /  \    \
+   7   30    6
+*/
+
 func breadthFirstTraversal<T>(_ treeNode: BinaryTreeNode<T>?) {
   var queue = Queue<BinaryTreeNode<T>>()
   guard let _ = treeNode else {
