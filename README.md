@@ -1,4 +1,4 @@
-# Binary-Tree
+# Binary Tree
 
 Binary Tree in Swift. A Binary Tree is an abstract data struture the is made up of a root node and a left and rigt subtree. A node can have zero, one or two child nodes. 
 
@@ -174,6 +174,9 @@ rootNode.inOrderTraversal { (node) in
   print(node.value) // 7 11 30 8 4 6
 }
 ```
+
+## Depth-First Order Traversal - In-Order
+
 
 
 ## Resources 
