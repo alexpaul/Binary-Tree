@@ -272,5 +272,7 @@ Pre-order traversal can be used to make a copy of a tree.
 1. [Wikipedia - Tree Data Structure](https://en.wikipedia.org/wiki/Tree_(data_structure))
 2. [Wikipedia - Binary Tree](https://en.wikipedia.org/wiki/Binary_tree#:~:text=In%20computer%20science%2C%20a%20binary,child%20and%20the%20right%20child.)
 3. [GeekForGeeks - Binary Tree Data Structure](https://www.geeksforgeeks.org/binary-tree-data-structure/)
-4. [RW - Swift Algorithm Club - Binary Tree](https://github.com/raywenderlich/swift-algorithm-club/tree/master/Binary%20Tree)
+4. [HackerRank - Binary Trees and Binary Search Trees](https://www.hackerrank.com/topics/binary-trees-and-binary-search-trees)
+5. [RW - Swift Algorithm Club - Binary Tree](https://github.com/raywenderlich/swift-algorithm-club/tree/master/Binary%20Tree)
+6. [Vidoe - HackerRank - Trees](https://www.youtube.com/watch?v=oSWTXtMglKE)
 
