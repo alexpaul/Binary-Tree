@@ -94,7 +94,7 @@ struct Queue<T> {
     elements.append(element)
   }
   
-  mutating func dequeue() -> T? {
+  mutating func dequeue() -> T? { // see Queue lesson for more optimized dequeue https://github.com/alexpaul/Queue
     guard !elements.isEmpty else {
       return nil
     }
