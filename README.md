@@ -50,8 +50,7 @@ class BinaryTreeNode<T> {
 */
 ```
 
-####
-Some facts about this Binary Tree: 
+#### Some facts about this Binary Tree: 
 
 * The height of the tree is 2, we count the edges between each node from the deepest leaf node. 
 * The depth of node 4 to the root is 1, again here we count the edges. 
