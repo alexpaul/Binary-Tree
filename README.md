@@ -14,9 +14,9 @@ A Binary Tree is an abstract data struture that is made up of a root node and a 
 
 ## Components of a Binary Tree Node
 
-* data type it holds e.g `Int` or `String` etc
-* a pointer to a left child node 
-* a pointer to a right child node 
+* **data** type it holds e.g `Int` or `String` etc
+* a pointer to a **left child** node 
+* a pointer to a **right child** node 
 
 ## Common Operations 
 
