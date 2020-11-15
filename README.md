@@ -50,6 +50,13 @@ class BinaryTreeNode<T> {
 */
 ```
 
+####
+Some facts about this Binary Tree: 
+
+* The height of the tree is 2, we count the edges between each node from the deepest leaf node. 
+* The depth of node 4 to the root is 1, again here we count the edges. 
+* This in NOT a Binary Search Tree as the values in the left subtree is not all less than the root and also the rules for a BST on the right subtree does not hold as node 4 and 6 should be greater than the root's value 8. 
+
 ## Traversing a Tree 
 
 The are 4 ways to traverse (iterate through each element of) a Binary Tree. 
