@@ -55,9 +55,9 @@ class BinaryTreeNode<T> {
 The are 4 ways to traverse (iterate through each element of) a Binary Tree. 
 
 * Breadth-First Order traversal or Level-order traversal 
-* Depth-First Order Traversal - In-Order 
-* Depth-First Order Traversal - Pre-Order 
-* Depth-First Order Traversal - Post-Order 
+* Depth-First Order Traversal - In-Order (left, root, right) 
+* Depth-First Order Traversal - Pre-Order (root, left, right)
+* Depth-First Order Traversal - Post-Order (left, right, root)
 
 
 ## Breadth-First Order traversal or Level-order traversal
