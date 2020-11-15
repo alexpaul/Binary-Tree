@@ -7,10 +7,10 @@ A Binary Tree is an abstract data struture that is made up of a root node and a 
 * root
 * subtree
 * parent node
-* leaf
-* depth
-* height 
-* diameter or width
+* leaf (a node that doen't have any children)
+* depth or level (number of edges from the root node to a given node)
+* height (number of edges from the root node to the furthest leaf node)
+* diameter or width (the longest distance between any two nodes in a tree)  
 
 ## Components of a Binary Tree Node
 
