@@ -192,6 +192,8 @@ rootNode.inOrderTraversal { (node) in
 }
 ```
 
+In-order traversal can be used to find out if a given binary tree is a binary search tree, i.e in ascending order.
+
 ## Depth-First Order Traversal - Post-Order
 
 #### Write a function that take a Binary Tree node and prints the values using `post-order traversal`
@@ -220,6 +222,8 @@ func postOrderTraversal<T>(_ treeNode: BinaryTreeNode<T>?) {
 postOrderTraversal(rootNode) // 7 30 11 6 4 8
 ```
 
+Post-order traversal can be used to delete a tree. 
+
 
 ## Depth-First Order Traversal - Pre-Order
 
@@ -247,6 +251,7 @@ func preOrderTraversal<T>(_ treeNode: BinaryTreeNode<T>?) {
 preOrderTraversal(rootNode) // 8 11 7 30 4 6
 ```
 
+Pre-order traversal can be used to make a copy of a tree. 
 
 ## Resources 
 
