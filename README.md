@@ -162,6 +162,8 @@ breadthFirstTraversal(rootNode)
 
 ## Depth-First Order Traversal - In-Order
 
+> Review with Stacks and Recursion. If we are using recursion on a given problem keep in mind that we are using an implicit stack.
+
 #### Write a function that takes a Binary Tree node and prints all its values 
 
 ```swift 
