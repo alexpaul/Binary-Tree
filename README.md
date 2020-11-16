@@ -13,6 +13,8 @@ A Binary Tree is an abstract data struture that is made up of a root node and a 
 * height (number of edges from the root node to the furthest leaf node)
 * diameter or width (the longest distance between any two nodes in a tree)  
 
+![binary tree sketch](https://user-images.githubusercontent.com/1819208/99263430-3089c600-27ed-11eb-9295-e404463561f2.jpg)
+
 ## Components of a Binary Tree Node
 
 * **data** type it holds e.g `Int` or `String` etc
