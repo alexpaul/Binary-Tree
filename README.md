@@ -74,6 +74,8 @@ The are 4 ways to traverse (iterate through each element of) a Binary Tree.
 
 With Bredth-First traversal a `Queue` is used since we want to print nodes by levels in which we visit them. We use the Queue to enqueue nodes and dequeue in the order we visited them. This ensures that we visit each node by the level in which it appears. 
 
+![breadth-first](https://user-images.githubusercontent.com/1819208/99404865-1cf86100-28ba-11eb-92ba-3066fe552c41.jpg)
+
 ```swift 
 /*
         8
