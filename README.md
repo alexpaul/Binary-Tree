@@ -226,6 +226,8 @@ In-order traversal can be used to find out if a given binary tree is a binary se
 
 ## Depth-First Order Traversal - Post-Order
 
+![post-order traversal](https://user-images.githubusercontent.com/1819208/99405325-a314a780-28ba-11eb-9848-00b6bd4f4425.jpg)
+
 #### Write a function that take a Binary Tree node and prints the values using `post-order traversal`
 
 ```swift 
