@@ -287,6 +287,12 @@ preOrderTraversal(rootNode) // 8 11 7 30 4 6
 
 Pre-order traversal can be used to make a copy of a tree. 
 
+## Challenge 
+
+#### 1. In-order Traversal 
+
+[LeetCode](https://leetcode.com/problems/binary-tree-inorder-traversal/)
+
 ## Resources 
 
 1. [Wikipedia - Tree Data Structure](https://en.wikipedia.org/wiki/Tree_(data_structure))
