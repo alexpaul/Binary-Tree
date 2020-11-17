@@ -257,6 +257,8 @@ Post-order traversal can be used to delete a tree.
 
 ## Depth-First Order Traversal - Pre-Order
 
+![pre-order traversal](https://user-images.githubusercontent.com/1819208/99405176-7791bd00-28ba-11eb-8da3-fa53071d5ba1.jpg)
+
 ```swift 
 /*
         8
