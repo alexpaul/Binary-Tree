@@ -295,7 +295,7 @@ Pre-order traversal can be used to make a copy of a tree.
       /   \
      11    4
     /  \    \
-   7   30    6 = height is 2
+   7   30    6 = height is 3
 */
 
 func maxDepth(_ rootNode: BinaryTreeNode?) -> Int {
