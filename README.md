@@ -287,6 +287,35 @@ preOrderTraversal(rootNode) // 8 11 7 30 4 6
 
 Pre-order traversal can be used to make a copy of a tree. 
 
+## Height of the tree or maximum depth of a Binary Tree
+
+```swift 
+/*
+        8 = height of root is 1
+      /   \
+     11    4
+    /  \    \
+   7   30    6 = height is 2
+*/
+
+func maxDepth(_ rootNode: BinaryTreeNode?) -> Int {
+  guard let _ = rootNode else {
+    return 0
+  }
+  var leftHeight = 0
+  var rightHeight = 0
+  if let leftChild = rootNode?.leftChild {
+    leftHeight = maxDepth(leftChild)
+  }
+  if let rightChild = rootNode?.rightChild {
+    rightHeight = maxDepth(rightChild)
+  }
+  return 1 + max(leftHeight, rightHeight)
+}
+
+maxDepth(rootNode) // 3
+```
+
 ## Challenge 
 
 #### 1. In-order Traversal 
