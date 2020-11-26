@@ -314,9 +314,11 @@ func height(_ treeNode: BinaryTreeNode?) -> Int {
   // we increment each recursive call by 1
   return 1 + max(leftHeight, rightHeight)
 }
+```
 
 Or we can write it using this shorter method below
 
+```swift
 func maxDepth(_ treeNode: BinaryTreeNode?) -> Int {
   guard let _ = treeNode else { return 0 }
   return 1 + max(maxDepth(treeNode?.leftChild), maxDepth(treeNode?.rightChild))
