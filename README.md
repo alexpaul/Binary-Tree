@@ -298,21 +298,31 @@ Pre-order traversal can be used to make a copy of a tree.
    7   30    6 = height is 3
 */
 
-func maxDepth(_ rootNode: BinaryTreeNode?) -> Int {
-  guard let _ = rootNode else {
+func height(_ treeNode: BinaryTreeNode?) -> Int {
+  guard let _ = treeNode else {
     return 0
   }
   var leftHeight = 0
   var rightHeight = 0
-  if let leftChild = rootNode?.leftChild {
-    leftHeight = maxDepth(leftChild)
+  if let leftChild = treeNode?.leftChild {
+    leftHeight = height(leftChild)
   }
-  if let rightChild = rootNode?.rightChild {
-    rightHeight = maxDepth(rightChild)
+  if let rightChild = treeNode?.rightChild {
+    rightHeight = height(rightChild)
   }
+  // we start counting from 1, which represents the root
+  // we increment each recursive call by 1
   return 1 + max(leftHeight, rightHeight)
 }
 
+Or we can write it using this shorter method below
+
+func maxDepth(_ treeNode: BinaryTreeNode?) -> Int {
+  guard let _ = treeNode else { return 0 }
+  return 1 + max(maxDepth(treeNode?.leftChild), maxDepth(treeNode?.rightChild))
+}
+
+height(rootNode) // 3 
 maxDepth(rootNode) // 3
 ```
 
