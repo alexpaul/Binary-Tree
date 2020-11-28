@@ -344,7 +344,7 @@ maxDepth(rootNode) // 3
 
 The diameter of the width of a Binary Tree is the longest path between two leaves. Those two leaves does not have to pass through the root. See sketch below: 
 
-![width of a bst]()
+![width of a bst](https://user-images.githubusercontent.com/1819208/100517014-c14d9380-3155-11eb-8b07-602b8e875115.jpg)
 
 ```swift 
 func diameter(_ root: BinaryTreeNode?) -> Int {
