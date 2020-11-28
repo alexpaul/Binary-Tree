@@ -339,6 +339,85 @@ height(rootNode) // 3
 maxDepth(rootNode) // 3
 ```
 
+## Diameter or Width of a Binary Tree
+
+```swift 
+func diameter(_ root: BinaryTreeNode?) -> Int {
+  guard let root = root else { return 0 }
+  
+  let leftHeight = height(root.leftChild)
+  let rightHeight = height(root.rightChild)
+  
+  let leftDiameter = diameter(root.leftChild)
+  let rightDiameter = diameter(root.rightChild)
+  
+  print(leftDiameter, rightDiameter)
+  
+  return max(1 + leftHeight + rightHeight, max(leftDiameter, rightDiameter))
+}
+
+
+/*
+        8
+      /   \
+     11    4
+    /  \    \
+   7   30    6
+*/
+
+
+// 7 11 8 4 6 = 5
+
+// 30 11 8 4 6 = 5
+
+
+
+/*
+              2
+            /   \
+           12   18
+          /  \
+         17   36
+        / \     \
+       5   9     23
+          /     /  \
+         16    1   10
+          \         /
+           14      3
+*/
+
+let grassRoot = BinaryTreeNode(2)
+let twelveNode = BinaryTreeNode(12)
+let eighteenNode = BinaryTreeNode(18)
+let seventeenNode = BinaryTreeNode(17)
+let thirtysixNode = BinaryTreeNode(36)
+let fiveNode = BinaryTreeNode(5)
+let nineNode = BinaryTreeNode(9)
+let twentyThreeNode = BinaryTreeNode(23)
+let sixteenNode = BinaryTreeNode(6)
+let oneNode = BinaryTreeNode(1)
+let tenNode = BinaryTreeNode(10)
+let fourteenNode = BinaryTreeNode(14)
+let threeNode = BinaryTreeNode(3)
+
+grassRoot.leftChild = twelveNode
+grassRoot.rightChild = eighteenNode
+twelveNode.leftChild = seventeenNode
+twelveNode.rightChild = thirtysixNode
+seventeenNode.leftChild = fiveNode
+seventeenNode.rightChild = nineNode
+nineNode.leftChild = sixteenNode
+sixteenNode.rightChild = fourteenNode
+thirtysixNode.rightChild = twentyThreeNode
+twentyThreeNode.leftChild = oneNode
+twentyThreeNode.rightChild = tenNode
+tenNode.leftChild = threeNode
+
+
+diameter(rootNode) // 5 - longest width passes through the root
+diameter(grassRoot) // 9 - longest width DOES NOT pass through the root
+```
+
 ## Challenge 
 
 #### 1. In-order Traversal 
