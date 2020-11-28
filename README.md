@@ -11,6 +11,7 @@ A Binary Tree is an abstract data struture that is made up of a root node and a 
 * To be able to use Depth-First Pre-Order traversal to print the values of a Binary Tree.
 * To be able to use Depth-First Post-Order traversal to print the values of a Binary Tree.
 * To be able to determine the height or the maximum depth of a Binary Tree. 
+* To be able to determine the diameter or width of a Binary Tree. 
 
 
 ## Tree Structure Vocabulary
