@@ -355,9 +355,7 @@ func diameter(_ root: BinaryTreeNode?) -> Int {
   
   let leftDiameter = diameter(root.leftChild)
   let rightDiameter = diameter(root.rightChild)
-  
-  print(leftDiameter, rightDiameter)
-  
+    
   return max(1 + leftHeight + rightHeight, max(leftDiameter, rightDiameter))
 }
 
