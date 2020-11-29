@@ -348,6 +348,11 @@ func diameter<T>(_ root: BinaryTreeNode<T>?) -> Int {
   return max(1 + leftHeight + rightHeight, max(leftDiameter, rightDiameter))
 }
 
+func height<T>(_ root: BinaryTreeNode<T>?) -> Int {
+  guard let root = root else { return 0 }
+  return 1 + max(height(root.left), height(root.right))
+}
+
 
 /*
         8
