@@ -140,11 +140,11 @@ struct Queue<T> {
 
 func breadthFirstTraversal<T>(_ treeNode: BinaryTreeNode<T>?) {
   var queue = Queue<BinaryTreeNode<T>>()
-  guard let _ = treeNode else {
+  guard let treeNode = treeNode else {
     return
   }
-  queue.enqueue(treeNode!)
-  print(treeNode!.value)
+  queue.enqueue(treeNode)
+  print(treeNode.value)
   while let node = queue.dequeue() {
     if let left = node.left {
       print(left.value)
@@ -183,17 +183,20 @@ breadthFirstTraversal(rootNode)
 #### Write a function that takes a Binary Tree node and prints all its values 
 
 ```swift 
-func inOrderTraversal<T>(_ node: BinaryTreeNode<T>?) {
-  if let left = node?.left {
-    inOrderTraversal(left)
-  }
-  if let value = node?.value {
-    print(value)
-  }
-  if let right = node?.right {
-    inOrderTraversal(right)
-  }
+func inOrderTraversal<T>(_ root: BinaryTreeNode<T>?) {
+  guard let root = root else { return }
+  inOrderTraversal(root.left)
+  print(root.value)
+  inOrderTraversal(root.right)
 }
+
+/*
+        8
+      /   \
+     11    4
+    /  \    \
+   7   30    6
+*/
 
 inOrderTraversal(rootNode) // 7 11 30 8 4 6
 ```
@@ -201,16 +204,11 @@ inOrderTraversal(rootNode) // 7 11 30 8 4 6
 #### Write a function that takes a Binary Tree node and captures its values via a closure
 
 ```swift 
-func inOrderTraversal<T>(_ node: BinaryTreeNode<T>?, visit: (BinaryTreeNode<T>) -> ()) {
-  if let left = node?.left {
-    inOrderTraversal(left, visit: visit)
-  }
-  if let node = node {
-    visit(node)
-  }
-  if let right = node?.right {
-    inOrderTraversal(right, visit: visit)
-  }
+func inOrderTraversal<T>(_ root: BinaryTreeNode<T>?, visit: (BinaryTreeNode<T>) -> ()) {
+  guard let root = root else { return }
+  inOrderTraversal(root.left, visit: visit)
+  visit(root)
+  inOrderTraversal(root.right, visit: visit)
 }
 
 inOrderTraversal(rootNode) { (node) in
@@ -251,16 +249,11 @@ In-order traversal can be used to find out if a given binary tree is a binary se
    7   30    6
 */
 
-func postOrderTraversal<T>(_ treeNode: BinaryTreeNode<T>?) {
-  if let left = treeNode?.left {
-    postOrderTraversal(left)
-  }
-  if let right = treeNode?.right {
-    postOrderTraversal(right)
-  }
-  if let root = treeNode {
-    print(root.value)
-  }
+func postOrderTraversal<T>(_ root: BinaryTreeNode<T>?) {
+  guard let root = root else { return }
+  postOrderTraversal(root.left)
+  postOrderTraversal(root.right)
+  print(root.value, terminator: " ")
 }
 
 postOrderTraversal(rootNode) // 7 30 11 6 4 8
@@ -282,16 +275,11 @@ Post-order traversal can be used to delete a tree.
    7   30    6
 */
 
-func preOrderTraversal<T>(_ treeNode: BinaryTreeNode<T>?) {
-  if let root = treeNode {
-    print(root.value)
-  }
-  if let left = treeNode?.left {
-    preOrderTraversal(left)
-  }
-  if let right = treeNode?.right {
-    preOrderTraversal(right)
-  }
+func preOrderTraversal<T>(_ root: BinaryTreeNode<T>?) {
+  guard let root = root else { return }
+  print(root.value, terminator: " ")
+  preOrderTraversal(root.left)
+  preOrderTraversal(root.right)
 }
 
 preOrderTraversal(rootNode) // 8 11 7 30 4 6
@@ -310,33 +298,34 @@ Pre-order traversal can be used to make a copy of a tree.
    7   30    6 = height is 3
 */
 
-func height(_ treeNode: BinaryTreeNode?) -> Int {
-  guard let _ = treeNode else {
+func height<T>(_ root: BinaryTreeNode<T>?) -> Int {
+  guard let root = root else {
     return 0
   }
   var leftHeight = 0
   var rightHeight = 0
-  if let leftChild = treeNode?.leftChild {
+  if let leftChild = root.left {
     leftHeight = height(leftChild)
   }
-  if let rightChild = treeNode?.rightChild {
+  if let rightChild = root.right {
     rightHeight = height(rightChild)
   }
   // we start counting from 1, which represents the root
   // we increment each recursive call by 1
   return 1 + max(leftHeight, rightHeight)
 }
+
+height(rootNode) // 3 
 ```
 
 Or we can write it using this shorter method below
 
 ```swift
-func maxDepth(_ treeNode: BinaryTreeNode?) -> Int {
-  guard let _ = treeNode else { return 0 }
-  return 1 + max(maxDepth(treeNode?.leftChild), maxDepth(treeNode?.rightChild))
+func maxDepth<T>(_ root: BinaryTreeNode<T>?) -> Int {
+  guard let root = root else { return 0 }
+  return 1 + max(maxDepth(root.left), maxDepth(root.right))
 }
 
-height(rootNode) // 3 
 maxDepth(rootNode) // 3
 ```
 
@@ -347,14 +336,14 @@ The diameter of the width of a Binary Tree is the longest path between two leave
 ![width of a bst](https://user-images.githubusercontent.com/1819208/100517014-c14d9380-3155-11eb-8b07-602b8e875115.jpg)
 
 ```swift 
-func diameter(_ root: BinaryTreeNode?) -> Int {
+func diameter<T>(_ root: BinaryTreeNode<T>?) -> Int {
   guard let root = root else { return 0 }
   
-  let leftHeight = height(root.leftChild)
-  let rightHeight = height(root.rightChild)
+  let leftHeight = height(root.left)
+  let rightHeight = height(root.right)
   
-  let leftDiameter = diameter(root.leftChild)
-  let rightDiameter = diameter(root.rightChild)
+  let leftDiameter = diameter(root.left)
+  let rightDiameter = diameter(root.right)
     
   return max(1 + leftHeight + rightHeight, max(leftDiameter, rightDiameter))
 }
