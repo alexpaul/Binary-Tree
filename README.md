@@ -13,6 +13,7 @@ A Binary Tree is an abstract data struture that is made up of a root node and a 
 * To be able to determine the **height or the maximum depth** of a Binary Tree. 
 * To be able to determine the **diameter or width** of a Binary Tree. 
 
+[Link to completed Binary Tree](https://repl.it/@alexpaul/BinaryTree#main.swift)
 
 ## Tree Structure Vocabulary
 
