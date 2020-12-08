@@ -4,6 +4,8 @@ A Binary Tree is an abstract data struture that is made up of a root node and a 
 
 ## Types of Binary Trees 
 
+## TODO - degenerate tree at minimum should have 3 nodes 
+
 ![sketch of types of binary trees](https://user-images.githubusercontent.com/1819208/101498715-6e849080-393a-11eb-8978-92eae19e451d.jpg)
 
 ## Objectives 
